@@ -1,5 +1,6 @@
 ﻿using System;
 using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.Design.Widget;
@@ -12,18 +13,31 @@ namespace MultiplePages
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
+        EditText UserNameET, PasswordET;
+        Button LogInBtn;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
 
-            Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
-            SetSupportActionBar(toolbar);
+            UserNameET = (EditText)FindViewById(Resource.Id.EtUserName);
+            PasswordET = (EditText)FindViewById(Resource.Id.EtPassword);
+            LogInBtn = (Button)FindViewById(Resource.Id.BtnLogin);
 
-            FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
-            fab.Click += FabOnClick;
+            LogInBtn.Click += delegate
+            {
+                if (UserNameET.Text == "" || PasswordET.Text == "")
+                {
+                    Toast.MakeText(this, "Please enter User name and Password : " , ToastLength.Long).Show();
+                }
+                else if (UserNameET.Text == "admin" || PasswordET.Text == "Passw0rd!@")
+                {
+                    Intent intent = new Intent(this, typeof(Page2Activity));
+                }
+            };
         }
+    
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
