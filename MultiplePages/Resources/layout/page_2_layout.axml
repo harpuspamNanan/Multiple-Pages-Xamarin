@@ -5,13 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-  <Button
+	<TextView
+		android:text="dsf "
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/tvWelcome" /> 
+
+	<Button
 		android:text="Back"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:minWidth="25px"
 		android:minHeight="25px"
-		android:id="@+id/button1"
-		android:layout_marginTop="40dp"/> 
+		android:id="@+id/backBtn"
+		android:layout_marginTop="40dp"/>
+	
 
 </LinearLayout>

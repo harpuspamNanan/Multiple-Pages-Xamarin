@@ -29,11 +29,17 @@ namespace MultiplePages
             {
                 if (UserNameET.Text == "" || PasswordET.Text == "")
                 {
-                    Toast.MakeText(this, "Please enter User name and Password : " , ToastLength.Long).Show();
+                    Toast.MakeText(this, "Please enter Username and Password " , ToastLength.Long).Show();
                 }
-                else if (UserNameET.Text == "admin" || PasswordET.Text == "Passw0rd!@")
+                else if (UserNameET.Text.Equals("admin") && PasswordET.Text.Equals("Passw0rd!@"))
                 {
                     Intent intent = new Intent(this, typeof(Page2Activity));
+                    StartActivity(intent);                  // Need to start the activity to go to another Page
+                    // To Connect Page 2 .cs file with it. and the layout will be connectefd there
+                }
+                else
+                {
+                    Toast.MakeText(this, "Your user name or password does not match ", ToastLength.Long).Show();
                 }
             };
         }

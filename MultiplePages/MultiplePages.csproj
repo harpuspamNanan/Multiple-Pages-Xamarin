@@ -57,9 +57,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
-    <Compile Include="Resources\layout\Page2Activity.cs" />
-    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="page2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Resource.designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -101,7 +101,7 @@
     <PackageReference Include="Xamarin.Android.Support.Design" Version="27.0.2.1" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Page2Layout.axml">
+    <AndroidResource Include="Resources\layout\page_2_layout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
